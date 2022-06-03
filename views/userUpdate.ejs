@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>| Signup |</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="../css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="../css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<%- include('partials/header') %>
+<!-- Header End -->
+
+<!-- Normal Breadcrumb Begin -->
+<section class="normal-breadcrumb set-bg" data-setbg="img/normal-breadcrumb.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="normal__breadcrumb__text">
+                    <h2>User update <%= user.name %></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Normal Breadcrumb End -->
+
+<!-- Signup Section Begin -->
+<section class="signup spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="login__form">
+                    <h3>User update <%= user.name %></h3>
+                    <form action="/users/<%= user._id.toString() %>" method="post">
+                        <div class="input__item">
+                            <input name="username" type="email" value="<%= user.username %>" placeholder="Email address">
+                            <span class="icon_mail"></span>
+                        </div>
+                        <div class="input__item">
+                            <input name="name" value="<%= user.name %>" type="text" placeholder="Your Name">
+                            <span class="icon_profile"></span>
+                        </div>
+                        <div class="input__item">
+                            <input name="city" value="<%= user.city %>" type="text" placeholder="City">
+                            <span class="icon_profile"></span>
+                        </div>
+
+                        <button type="submit" class="site-btn">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Signup Section End -->
+
+<!-- Footer Section Begin -->
+<%- include('partials/footer') %>
+<!-- Footer Section End -->
+
+<!-- Js Plugins -->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/player.js"></script>
+<script src="../js/jquery.nice-select.min.js"></script>
+<script src="../js/mixitup.min.js"></script>
+<script src="../js/jquery.slicknav.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>
