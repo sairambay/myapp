@@ -17,14 +17,23 @@ const getMoviesOptions = {
 };
 
 
-let mongoClient = new mongoDb.MongoClient('mongodb://localhost:27017/', {
+/*let mongoClient = new mongoDb.MongoClient('mongodb://localhost:27017/', {
     useUnifiedTopology: true
-});
+});*/
 
 let db
 let usersCollection
 let movieCollection
 let wishListCollection
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://abdu:Bec57tvYC8P4t4v2@cluster0.jamloaj.mongodb.net/?retryWrites=true&w=majority";
+let mongoClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+/*client.connect(err => {
+    const collection = client.db("test").collection("devices");
+    // perform actions on the collection object
+    client.close();
+});*/
 mongoClient.connect(async function (error, mongo) {
     if (!error) {
         db = mongo.db('assignment');
